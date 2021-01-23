@@ -1,20 +1,37 @@
 {
-  "name": "electronuxt",
-  "version": "1.1.1",
-  "description": "Create an Electron app that serves a Nuxt.js app",
+  "name": "nuxt-electron-template",
+  "version": "1.0.0",
+  "description": "Nuxt + Electron Template",
+  "author": "Jon Doe <john@doe.com>",
+  "private": true,
   "main": "main.js",
-  "repository": "git@github.com:detrohutt/electronuxt.git",
-  "author": "Alexander Roberts <detrohutt@gmail.com>",
-  "license": "MIT",
+  "build": {
+    "appId": "com.example.app",
+    "directories": {
+      "buildResources": "build-resources"
+    }
+  },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development electron .",
-    "build": "nuxt build",
-    "start": "electron .",
-    "pack": "npm run build && electron-packager ./ --overwrite"
+    "dev": "cross-env NODE_ENV=DEV electron .",
+    "build": "nuxt build && electron-builder",
+    "lint": "eslint --ext \".js,.vue\" --ignore-path .gitignore ."
   },
   "dependencies": {
-    "cross-env": "^3.1.4",
-    "electron": "latest",
-    "nuxt": "latest"
+    "nuxt": "^2.14.12"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.2.0",
+    "electron-builder": "^22.9.1",
+    "electron-devtools-installer": "^3.1.1",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.4.1",
+    "prettier": "^2.2.1"
   }
 }
